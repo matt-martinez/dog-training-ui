@@ -5,13 +5,23 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
 
   function signup(userPass) {
     console.log("Frontend Sign Up");
-    $http.post(`${server}/users`, { user: userPass})
+    $http.post(`${server}/users`, { user: userPass })
       .then(function(response) {
         console.log(response);
         $state.go('homepage');
       });
   }
 
-  
+  function login(userPass) {
+    console.log("Frontend Login");
+    $http.post(`${server}/users/login`, { user: userPass })
+      .then(function(response) {
+        console.log(response.data);
+        AuthTokenFactory.setToken(response.data.token);
+
+        $scope.$emit('loggedInUser', response.data.user);
+        $state.go('homepage');
+      });
+  }
 
 }
