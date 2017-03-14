@@ -4,19 +4,19 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
   // placeholder for heroku api link
 
   function signup(userPass) {
-    console.log("Frontend Sign Up");
+    // console.log("Frontend Sign Up");
     $http.post(`${server}/users`, { user: userPass })
       .then(function(response) {
-        console.log(response);
+        // console.log(response);
         $state.go('homepage');
       });
   }
 
   function login(userPass) {
-    console.log("Frontend Login");
+    // console.log("Frontend Login");
     $http.post(`${server}/users/login`, { user: userPass })
       .then(function(response) {
-        console.log(response.data);
+        // console.log(response.data);
         AuthTokenFactory.setToken(response.data.token);
 
         $scope.$emit('loggedInUser', response.data.user);
@@ -25,11 +25,11 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
   }
 
   function logout() {
-    console.log("Frontend Logout");
+    // console.log("Frontend Logout");
     AuthTokenFactory.setToken()
 
     $scope.$emit('loggedOutUser');
-    $scope.go('homepage');
+    $state.go('homepage');
   }
 
   this.logout = logout;
