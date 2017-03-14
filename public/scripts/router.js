@@ -15,5 +15,10 @@ angular.module('DogTrainingApp', ['ui.router'])
       url: '/',
       templateUrl: '/partials/homepage.html'
     })
+    .state('signup', {
+      url: '/users',
+      templateUrl: '/partials/signup.html',
+      controller: 'AuthController as auth'
+    })
 
   }
