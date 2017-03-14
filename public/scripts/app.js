@@ -1,5 +1,5 @@
 angular.module('DogTrainingApp')
-  // .controller('HomeController', HomeController)
+  .controller('HomeController', HomeController)
   // .controller('AuthController', AuthController)
   // .controller('BehaviorController', BehaviorController)
   // .controller('CommentController', CommentController)
