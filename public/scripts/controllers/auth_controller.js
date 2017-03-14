@@ -24,4 +24,15 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
       });
   }
 
+  function logout() {
+    console.log("Frontend Logout");
+    AuthTokenFactory.setToken()
+
+    $scope.$emit('loggedOutUser');
+    $scope.go('homepage');
+  }
+
+  this.logout = logout;
+  this.login = login;
+  this.signup = signup;
 }
