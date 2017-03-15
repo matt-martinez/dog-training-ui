@@ -20,5 +20,9 @@ angular.module('DogTrainingApp', ['ui.router'])
       templateUrl: '/partials/signup.html',
       controller: 'AuthController as auth'
     })
-
+    .state('forum', {
+      url: '/forum',
+      templateUrl: '/partials/forum.html',
+      controller: 'PostController as posts'
+    })
   }
