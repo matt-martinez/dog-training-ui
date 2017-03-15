@@ -22,7 +22,10 @@ angular.module('DogTrainingApp', ['ui.router'])
     })
     .state('forum', {
       url: '/forum',
-      templateUrl: '/partials/forum.html',
-      controller: 'PostController as posts'
+      templateUrl: '/partials/forum.html'
+    })
+    .state('post', {
+      url: '/post',
+      templateUrl: '/partials/post.html'
     })
   }
