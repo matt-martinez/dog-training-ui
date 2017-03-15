@@ -1,0 +1,7 @@
+<h1>Write a New Post</h1>
+
+<form ng-submit="posts.createPost(home.currentUser)">
+  <input type="text" placeholder="Post Title" ng-model="posts.newPost.title">
+  <textarea ng-model="posts.newPost.body"></textarea>
+  <button>Submit</button>
+</form>
