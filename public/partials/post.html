@@ -13,4 +13,12 @@
   </div>
 </div>
 <br>
+<div class="">
+  <h3>Comments</h3>
+  <div class="" ng-repeat="comment in comments.allComments" ng-show="comment.post_id == posts.singlePost.id">
+    <comment />
+  </div>
+</div>
+
+
 <a ui-sref="forum">Return to Forum</a>
