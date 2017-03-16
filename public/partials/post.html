@@ -2,6 +2,13 @@
   <h1>{{posts.singlePost.title}}</h1>
   <h4>{{posts.singlePost.created_at | date: 'MM-dd-yyyy HH:mm' }}</h4>
   <p>{{posts.singlePost.body}}</p>
-</div>
+  <button ng-show="home.currentUser.id=={{posts.singlePost.user_id}}" ng-click="editForm=true">Edit Post</button><button ng-show="home.currentUser.id=={{posts.singlePost.user_id}}">Delete Post</button>
 
+  <form ng-show="editForm" ng-submit="posts.editPost(post, home.currentUser, posts.singlePost.id)">
+    <input type="text" placeholder="{{posts.singlePost.title}}" ng-model="post.title">
+    <textarea placeholder="{{posts.singlePost.body}}" ng-model="post.body"></textarea>
+    <button ng-click="editForm=false">Submit</button>
+  </form>
+</div>
+<br>
 <a ui-sref="forum">Return to Forum</a>
