@@ -26,14 +26,11 @@ angular.module('DogTrainingApp', ['ui.router'])
     })
     .state('post', {
       url: '/post',
-      templateUrl: '/partials/post.html'
+      templateUrl: '/partials/post.html',
+      controller: 'CommentController as comments'
     })
     .state('createPost', {
       url: '/createPost',
       templateUrl: '/partials/createPost.html'
-    })
-    .state('editPost', {
-      url: '/editPost',
-      templateUrl: 'partials/editPost.html'
     })
   }
