@@ -42,6 +42,22 @@ function PostController($scope, $http, $state) {
     });
   }
 
+  // EDIT
+  function editPost(post, currentUser, id) {
+    // console.log("Post Edit");
+    // console.log(post)
+    // console.log(currentUser)
+    // console.log(id)
+    $http.put(`${server}/posts/${id}`, { post: {title: post.title, body: post.body }})
+      .then(function(response) {
+        console.log(response);
+        getAllPosts();
+        $state.go('post');
+        showPost(id);
+      });
+  }
+
+  self.editPost = editPost;
   self.createPost = createPost;
   self.showPost = showPost;
   self.getAllPosts = getAllPosts;
