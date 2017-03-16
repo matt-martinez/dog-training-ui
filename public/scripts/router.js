@@ -33,4 +33,9 @@ angular.module('DogTrainingApp', ['ui.router'])
       url: '/createPost',
       templateUrl: '/partials/createPost.html'
     })
+    .state('behavior', {
+      url: '/behavior',
+      templateUrl: '/partials/behavior.html',
+      controller: 'BehaviorController as behaviors'
+    })
   }
