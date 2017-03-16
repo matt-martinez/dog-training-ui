@@ -32,4 +32,8 @@ angular.module('DogTrainingApp', ['ui.router'])
       url: '/createPost',
       templateUrl: '/partials/createPost.html'
     })
+    .state('editPost', {
+      url: '/editPost',
+      templateUrl: 'partials/editPost.html'
+    })
   }
