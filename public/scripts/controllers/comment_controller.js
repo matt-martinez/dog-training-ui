@@ -13,11 +13,20 @@ function CommentController($scope, $http, $state) {
       .then(function(response) {
         console.log(response)
         console.log(response.data.comments);
+        self.allComments = response.data.comments;
       })
   }
   getAllComments();
 
   // Show
+  // function getPostComments(id) {
+  //   console.log("Loading Comments by Post")
+  //   $http.get(`${server}/posts/${id}/comments`)
+  //     .then(function(response) {
+  //       console.log(response);
+  //     });
+  // }
+  // getPostComments();
 
   // Create
 
@@ -25,6 +34,7 @@ function CommentController($scope, $http, $state) {
 
   // Delete
 
+  // self.getPostComments = getPostComments;
   self.getAllComments = getAllComments;
 
 }
