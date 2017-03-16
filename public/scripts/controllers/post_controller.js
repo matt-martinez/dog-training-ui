@@ -42,7 +42,7 @@ function PostController($scope, $http, $state) {
     });
   }
 
-  // EDIT
+  // Edit
   function editPost(post, currentUser, id) {
     // console.log("Post Edit");
     // console.log(post)
@@ -57,6 +57,20 @@ function PostController($scope, $http, $state) {
       });
   }
 
+  // Delete
+  function deletePost(currentUser, id) {
+    // console.log("Post Delete");
+    // console.log(currentUser)
+    // console.log(id)
+    $http.delete(`${server}/posts/${id}`)
+      .then(function(response) {
+        // console.log(response);
+        getAllPosts();
+        $state.go('forum');
+      });
+  }
+
+  self.deletePost = deletePost;
   self.editPost = editPost;
   self.createPost = createPost;
   self.showPost = showPost;
