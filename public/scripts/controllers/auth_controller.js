@@ -32,7 +32,7 @@ function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
     $state.go('homepage');
   }
 
-  this.logout = logout;
-  this.login = login;
-  this.signup = signup;
+  self.logout = logout;
+  self.login = login;
+  self.signup = signup;
 }
