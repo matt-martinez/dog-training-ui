@@ -25,7 +25,7 @@ function PostController($scope, $http, $state) {
         // console.log(response.data.post);
         self.singlePost = response.data.post;
 
-        $state.go('post');
+        $state.go('post', {'id': id});
       });
   }
 

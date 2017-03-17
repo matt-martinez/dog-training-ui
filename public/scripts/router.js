@@ -25,7 +25,7 @@ angular.module('DogTrainingApp', ['ui.router'])
       templateUrl: '/partials/forum.html'
     })
     .state('post', {
-      url: '/post',
+      url: '/post/:id',
       templateUrl: '/partials/post.html',
       controller: 'CommentController as comments'
     })

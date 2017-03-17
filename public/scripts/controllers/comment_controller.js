@@ -1,32 +1,22 @@
-function CommentController($scope, $http, $state) {
+function CommentController($scope, $http, $state, $stateParams) {
   var self    = this;
   var server  = 'http://localhost:3000';
   // placeholder for heroku api link
-  console.log("Loading Comment Controller");
-
-  self.allComments = [];
-
-  // Index
-  function getAllComments() {
-    console.log("Loading Comments")
-    $http.get(`${server}/comments`)
-      .then(function(response) {
-        console.log(response)
-        console.log(response.data.comments);
-        self.allComments = response.data.comments;
-      })
-  }
-  getAllComments();
+  // console.log("Loading Comment Controller");
+  console.log($stateParams)
+  // console.log($scope.$parent.posts.singlePost.id)
 
   // Show
-  // function getPostComments(id) {
-  //   console.log("Loading Comments by Post")
-  //   $http.get(`${server}/posts/${id}/comments`)
-  //     .then(function(response) {
-  //       console.log(response);
-  //     });
-  // }
-  // getPostComments();
+  function getPostComments() {
+    // console.log("Loading Comments by Post")
+    var id = $stateParams.id;
+    $http.get(`${server}/posts/${id}/comments`)
+      .then(function(response) {
+        // console.log(response);
+        self.postComments = response.data.comments;
+      });
+  }
+  getPostComments();
 
   // Create
 
@@ -34,7 +24,6 @@ function CommentController($scope, $http, $state) {
 
   // Delete
 
-  // self.getPostComments = getPostComments;
-  self.getAllComments = getAllComments;
+  self.getPostComments = getPostComments;
 
 }
