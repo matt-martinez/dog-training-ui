@@ -49,11 +49,23 @@ function CommentController($scope, $http, $state, $stateParams) {
   }
 
   // Comment Create
+  self.newComment = {body: ''};
+  function createComment(currentUser, id) {
+    console.log("Comment Create");
+    console.log(id)
+    $http.post(`${server}/posts/${id}/comments`, { comment: { body: self.newComment.body, user_id: currentUser.id, post_id: id }})
+      .then(function(response) {
+        console.log(response);
+        getPostsAndComments();
+        self.newComment = {body: ''};
+      });
+  }
 
   // Comment Edit
 
   // Comment Delete
 
+  self.createComment = createComment;
   self.deletePost = deletePost;
   self.editPost = editPost;
   self.getPostsAndComments = getPostsAndComments;
