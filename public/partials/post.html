@@ -18,7 +18,17 @@
   <div class="" ng-repeat="comment in comments.postComments">
     <comment />
   </div>
+  <br>
+  <div class="">
+    <button ng-show="home.currentUser" ng-click="createForm=true">Add Comment</button>
+    <p ng-show="!home.currentUser">Please sign in to add a comment.</p>
+    
+    <form ng-show="createForm" ng-submit="comments.createComment(home.currentUser, comments.singlePost.id)">
+      <textarea ng-model="comments.newComment.body"></textarea>
+      <button ng-click="createForm=false">Submit</button>
+    </form>
+  </div>
 </div>
-
+<br>
 
 <a ui-sref="forum">Return to Forum</a>
