@@ -3,9 +3,11 @@ function CommentController($scope, $http, $state, $stateParams) {
   var server  = 'http://localhost:3000';
   // placeholder for heroku api link
   // console.log("Loading Comment Controller");
-  // console.log($stateParams)
-  // console.log($scope.$parent.posts.singlePost.id)
 
+  // Refactor was needed to address scoping issue in post.html. Upon page refresh,
+  // post.id was lost which caused post.html to break. Using $stateParams to
+  // assign the id and moving all post functions dependent on post.html to this
+  // controller solved the issue.
   // Show
   function getPostsAndComments() {
     // console.log("Loading Posts and Comments")
@@ -29,12 +31,9 @@ function CommentController($scope, $http, $state, $stateParams) {
   // Post Edit
   function editPost(post, currentUser, id) {
     // console.log("Post Edit");
-    // console.log(post)
-    // console.log(currentUser)
-    // console.log(id)
     $http.put(`${server}/posts/${id}`, { post: {title: post.title, body: post.body }})
       .then(function(response) {
-        console.log(response);
+        // console.log(response);
         getPostsAndComments();
       });
   }
@@ -42,8 +41,6 @@ function CommentController($scope, $http, $state, $stateParams) {
   // Post Delete
   function deletePost(currentUser, id) {
     // console.log("Post Delete");
-    // console.log(currentUser)
-    // console.log(id)
     $http.delete(`${server}/posts/${id}`)
       .then(function(response) {
         // console.log(response);

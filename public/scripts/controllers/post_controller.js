@@ -3,8 +3,8 @@ function PostController($scope, $http, $state) {
   var server  = 'http://localhost:3000';
   // placeholder for heroku api link
   // console.log("Loading Post Controller");
-  getAllPosts();
 
+  getAllPosts();
   self.allPosts = [];
 
   // Index
@@ -35,10 +35,6 @@ function PostController($scope, $http, $state) {
       $state.go('forum');
     });
   }
-
-  // Edit
-
-  // Delete
 
   self.createPost = createPost;
   self.showPost = showPost;
