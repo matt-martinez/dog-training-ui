@@ -22,7 +22,8 @@ angular.module('DogTrainingApp', ['ui.router'])
     })
     .state('forum', {
       url: '/forum',
-      templateUrl: '/partials/forum.html'
+      templateUrl: '/partials/forum.html',
+      controller: 'PostController as posts'
     })
     .state('post', {
       url: '/post/:id',
@@ -31,7 +32,8 @@ angular.module('DogTrainingApp', ['ui.router'])
     })
     .state('createPost', {
       url: '/createPost',
-      templateUrl: '/partials/createPost.html'
+      templateUrl: '/partials/createPost.html',
+      controller: 'PostController as posts'
     })
     .state('behavior', {
       url: '/behavior',
