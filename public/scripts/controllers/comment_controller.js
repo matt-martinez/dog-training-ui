@@ -73,7 +73,16 @@ function CommentController($scope, $http, $state, $stateParams) {
   }
 
   // Comment Delete
+  function deleteComment(currentUser, id) {
+    // console.log("Comment Delete");
+    $http.delete(`${server}/comments/${id}`)
+      .then(function(response) {
+        // console.log(response);
+        getPostsAndComments();
+      });
+  }
 
+  self.deleteComment = deleteComment;
   self.editComment = editComment;
   self.createComment = createComment;
   self.deletePost = deletePost;
