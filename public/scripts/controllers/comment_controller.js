@@ -16,13 +16,8 @@ function CommentController($scope, $http, $state, $stateParams) {
     $http.get(`${server}/posts/${id}`)
       .then(function(response) {
         // console.log(response.data.post);
-        self.singlePost = response.data.post;
-      });
 
-    // calling comments
-    $http.get(`${server}/posts/${id}/comments`)
-      .then(function(response) {
-        // console.log(response);
+        self.singlePost = response.data.post;
         self.postComments = response.data.comments;
       });
   }
