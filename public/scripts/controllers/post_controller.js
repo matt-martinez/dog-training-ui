@@ -3,6 +3,7 @@ function PostController($scope, $http, $state) {
   var server  = 'http://localhost:3000';
   // placeholder for heroku api link
   // console.log("Loading Post Controller");
+  getAllPosts();
 
   self.allPosts = [];
 
@@ -15,18 +16,11 @@ function PostController($scope, $http, $state) {
         self.allPosts = response.data.posts;
       });
   }
-  getAllPosts();
 
   // Show
   function showPost(id) {
     // console.log("Post Show");
-    $http.get(`${server}/posts/${id}`)
-      .then(function(response) {
-        // console.log(response.data.post);
-        self.singlePost = response.data.post;
-
         $state.go('post', {'id': id});
-      });
   }
 
   // Create
@@ -43,35 +37,9 @@ function PostController($scope, $http, $state) {
   }
 
   // Edit
-  function editPost(post, currentUser, id) {
-    // console.log("Post Edit");
-    // console.log(post)
-    // console.log(currentUser)
-    // console.log(id)
-    $http.put(`${server}/posts/${id}`, { post: {title: post.title, body: post.body }})
-      .then(function(response) {
-        console.log(response);
-        getAllPosts();
-        $state.go('post');
-        showPost(id);
-      });
-  }
 
   // Delete
-  function deletePost(currentUser, id) {
-    // console.log("Post Delete");
-    // console.log(currentUser)
-    // console.log(id)
-    $http.delete(`${server}/posts/${id}`)
-      .then(function(response) {
-        // console.log(response);
-        getAllPosts();
-        $state.go('forum');
-      });
-  }
 
-  self.deletePost = deletePost;
-  self.editPost = editPost;
   self.createPost = createPost;
   self.showPost = showPost;
   self.getAllPosts = getAllPosts;
