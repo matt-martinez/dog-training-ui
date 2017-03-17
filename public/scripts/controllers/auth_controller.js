@@ -1,7 +1,7 @@
 function AuthController($http, $state, $scope, $rootScope, AuthTokenFactory) {
   var self    = this;
-  var server  = 'http://localhost:3000';
-  // placeholder for heroku api link
+  // var server  = 'http://localhost:3000';
+  var server  = 'https://pawsitive-reinforcement-api.herokuapp.com/';
 
   function signup(userPass) {
     // console.log("Frontend Sign Up");

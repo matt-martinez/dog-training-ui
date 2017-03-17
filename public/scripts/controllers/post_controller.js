@@ -1,7 +1,7 @@
 function PostController($scope, $http, $state) {
   var self    = this;
-  var server  = 'http://localhost:3000';
-  // placeholder for heroku api link
+  // var server  = 'http://localhost:3000';
+  var server  = 'https://pawsitive-reinforcement-api.herokuapp.com/';
   // console.log("Loading Post Controller");
 
   getAllPosts();
