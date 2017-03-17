@@ -12,7 +12,7 @@ function CommentController($scope, $http, $state, $stateParams) {
   function getPostsAndComments() {
     // console.log("Loading Posts and Comments")
     var id = $stateParams.id;
-    // calling posts
+    // calling posts and comments
     $http.get(`${server}/posts/${id}`)
       .then(function(response) {
         // console.log(response.data.post);

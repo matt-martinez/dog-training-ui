@@ -22,7 +22,7 @@
   <div class="">
     <button ng-show="home.currentUser" ng-click="createForm=true">Add Comment</button>
     <p ng-show="!home.currentUser">Please sign in to add a comment.</p>
-    
+
     <form ng-show="createForm" ng-submit="comments.createComment(home.currentUser, comments.singlePost.id)">
       <textarea ng-model="comments.newComment.body"></textarea>
       <button ng-click="createForm=false">Submit</button>

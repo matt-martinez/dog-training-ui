@@ -1,1 +1,22 @@
 <h1>Meetups!</h1>
+
+<form ng-submit="meetups.findMeetups(zip, radius)">
+  <input type="number" placeholder="Zipcode" ng-model="meetups.meetupSearch.zip">
+  <input type="number" placeholder="Mile Radius" ng-model="meetups.meetupSearch.radius">
+  <button>Submit</button>
+</form>
+
+<div class="meetupInfo" ng-repeat="meetup in meetups.meetupResults">
+  <div class="meetupInfoLeft">
+    <h3>{{meetup.name}}</h3>
+    <img class="groupPhoto" ng-src="{{meetup.group_photo.photo_link}}" alt="Group Photo">
+  </div>
+  <div class="meetupInfoRight">
+    <p>Members: {{meetup.members}}</p>
+    <p>{{meetup.city}}, {{meetup.state}}</p>
+    <p>Group Link: <a href="{{meetup.link}}">{{meetup.link}}</a></p>
+    <p>Description: {{meetup.description}}</p>
+    <p>Next Event: {{meetup.next_event.name}}</p>
+    <p>Time: {{meetup.next_event.time | date: 'MM-dd-yyyy HH:mm a'}}</p>
+  </div>
+</div>

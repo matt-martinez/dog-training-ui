@@ -43,6 +43,6 @@ angular.module('DogTrainingApp', ['ui.router'])
     .state('meetup', {
       url: '/meetup',
       templateUrl: '/partials/meetup.html',
-      controller: 'MeetupController as meetup'
+      controller: 'MeetupController as meetups'
     })
   }
