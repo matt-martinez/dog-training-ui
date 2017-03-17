@@ -1,3 +1,13 @@
 <div class="individualComment">
   <p>{{comment.body}}</p>
+
+  <div class="">
+    <button ng-show="home.currentUser.id==comment.user_id" ng-click="editCommentForm=true">Edit Comment</button>
+    <!-- <button ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="comments.deleteComment(home.currentUser, comments.singlePost.id)">Delete Post</button> -->
+
+    <form ng-show="editCommentForm" ng-submit="comments.editComment(comment, home.currentUser, comment.id)">
+      <textarea placeholder="{{comment.body}}" ng-model="comments.updatedComment.body"></textarea>
+      <button ng-click="editCommentForm=false">Submit</button>
+    </form>
+  </div>
 </div>
