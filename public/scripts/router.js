@@ -40,4 +40,9 @@ angular.module('DogTrainingApp', ['ui.router'])
       templateUrl: '/partials/behavior.html',
       controller: 'BehaviorController as behaviors'
     })
+    .state('meetup', {
+      url: '/meetup',
+      templateUrl: '/partials/meetup.html',
+      controller: 'MeetupController as meetup'
+    })
   }
