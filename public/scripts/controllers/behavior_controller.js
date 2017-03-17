@@ -1,7 +1,7 @@
 function BehaviorController($scope, $http, $state) {
   var self    = this;
-  // var server  = 'http://localhost:3000';
-  var server  = 'https://pawsitive-reinforcement-api.herokuapp.com/';
+  var server  = 'http://localhost:3000';
+  // var server  = 'https://pawsitive-reinforcement-api.herokuapp.com/';
   // console.log("Loading Behavior Controller");
 
   self.allBehaviors = [];

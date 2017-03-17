@@ -1,8 +1,8 @@
 function CommentController($scope, $http, $state, $stateParams) {
   var self    = this;
-  // var server  = 'http://localhost:3000';
+  var server  = 'http://localhost:3000';
   var server  = 'https://pawsitive-reinforcement-api.herokuapp.com/';
-  // console.log("Loading Comment Controller");
+  console.log("Loading Comment Controller");
 
   // Refactor was needed to address scoping issue in post.html. Upon page refresh,
   // post.id was lost which caused post.html to break. Using $stateParams to
