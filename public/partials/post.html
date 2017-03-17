@@ -1,13 +1,13 @@
 <div class="">
-  <h1>{{posts.singlePost.title}}</h1>
-  <h4>{{posts.singlePost.created_at | date: 'MM-dd-yyyy HH:mm' }}</h4>
-  <p>{{posts.singlePost.body}}</p>
+  <h1>{{comments.singlePost.title}}</h1>
+  <h4>{{comments.singlePost.created_at | date: 'MM-dd-yyyy HH:mm' }}</h4>
+  <p>{{comments.singlePost.body}}</p>
   <div class="">
-    <button ng-show="home.currentUser.id=={{posts.singlePost.user_id}}" ng-click="editForm=true">Edit Post</button><button ng-show="home.currentUser.id=={{posts.singlePost.user_id}}" ng-click="posts.deletePost(home.currentUser, posts.singlePost.id)">Delete Post</button>
+    <button ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="editForm=true">Edit Post</button><button ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="comments.deletePost(home.currentUser, comments.singlePost.id)">Delete Post</button>
 
-    <form ng-show="editForm" ng-submit="posts.editPost(post, home.currentUser, posts.singlePost.id)">
-      <input type="text" placeholder="{{posts.singlePost.title}}" ng-model="post.title">
-      <textarea placeholder="{{posts.singlePost.body}}" ng-model="post.body"></textarea>
+    <form ng-show="editForm" ng-submit="comments.editPost(post, home.currentUser, comments.singlePost.id)">
+      <input type="text" placeholder="{{comments.singlePost.title}}" ng-model="post.title">
+      <textarea placeholder="{{comments.singlePost.body}}" ng-model="post.body"></textarea>
       <button ng-click="editForm=false">Submit</button>
     </form>
   </div>
