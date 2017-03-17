@@ -2,15 +2,29 @@
 
 <div class="searchBehavior">
   <form autocomplete="on">
-    <label for=""></label>
-    <input type="text" placeholder="Enter Your Dog's Behavior" ng-model="searchBar">
+    <label for="dogBehaviors">Describe Your Dog's Behavior</label>
+    <input id="dogBehaviors" type="text" placeholder="i.e. Barking, Chewing, House-Training" ng-model="searchBar">
+    <button>Submit</button>
   </form>
 </div>
 
-<div class="suggestions">
+<div ng-show="searchBar" ng-repeat="behavior in behaviors.allBehaviors | filter: searchBar">
+  <h3>{{behavior.name}}</h3>
 
-</div>
+  <div class="suggestions">
+    <h4>Here are some suggestions:</h4>
+    <p>{{behavior.suggestion_one}}</p>
+    <p>{{behavior.suggestion_two}}</p>
+    <p>{{behavior.suggestion_three}}</p>
+    <p>{{behavior.suggestion_four}}</p>
+    <p>{{behavior.suggestion_five}}</p>
+  </div>
 
-<div class="resources">
+  <div class="resources">
+    <h4>Here are some more resources:</h4>
+    <p><a href="{{behavior.resource_one}}">{{behavior.resource_one}}</a></p>
+    <p><a href="{{behavior.resource_two}}">{{behavior.resource_two}}</a></p>
+    <p><a href="{{behavior.resource_three}}">{{behavior.resource_three}}</a></p>
+  </div>
 
 </div>
