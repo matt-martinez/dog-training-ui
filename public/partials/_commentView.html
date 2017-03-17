@@ -3,7 +3,7 @@
 
   <div class="">
     <button ng-show="home.currentUser.id==comment.user_id" ng-click="editCommentForm=true">Edit Comment</button>
-    <button ng-show="home.currentUser.id==comment.user_id" ng-click="comments.deleteComment(home.currentUser, comment.id)">Delete Post</button>
+    <button ng-show="home.currentUser.id==comment.user_id" ng-click="comments.deleteComment(home.currentUser, comment.id)">Delete Comment</button>
 
     <form ng-show="editCommentForm" ng-submit="comments.editComment(comment, home.currentUser, comment.id)">
       <textarea placeholder="{{comment.body}}" ng-model="comments.updatedComment.body"></textarea>
