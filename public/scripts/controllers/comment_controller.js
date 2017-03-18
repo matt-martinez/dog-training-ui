@@ -56,14 +56,14 @@ function CommentController($scope, $http, $state, $stateParams) {
   }
 
   // Comment Edit
-  self.updatedComment = {body: ''};
+  // self.updatedComment = {body: ''};
   function editComment(comment, currentUser, id) {
-    // console.log("Comment Edit");
-    $http.put(`${server}/comments/${id}`, self.updatedComment)
+    console.log("Comment Edit");
+    $http.put(`${server}/comments/${id}`, comment)
       .then(function(response) {
-        // console.log(response);
+        console.log(response);
         getPostsAndComments();
-        self.updatedComment = {body: ''};
+        // self.updatedComment = {body: ''};
       });
   }
 

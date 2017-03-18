@@ -15,7 +15,7 @@
 <br>
 <div class="">
   <h3>Comments</h3>
-  <div class="" ng-repeat="comment in comments.postComments">
+  <div class="" ng-repeat="comment in comments.postComments | orderBy: 'created_at' ">
     <comment />
   </div>
   <br>
