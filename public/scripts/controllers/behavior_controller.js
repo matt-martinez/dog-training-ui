@@ -12,7 +12,6 @@ function BehaviorController($scope, $http, $state) {
       .then(function(response) {
         // console.log(response);
         self.allBehaviors = response.data.behaviors;
-        // console.log(self.allBehaviors);
       });
   }
   getAllBehaviors();

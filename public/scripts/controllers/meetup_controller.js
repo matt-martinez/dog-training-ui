@@ -6,7 +6,7 @@ function MeetupController($scope, $http, $state) {
 
   self.meetupSearch = {zip: '', radius: ''}
   function findMeetups(zip, radius) {
-    console.log("Looking for Meetups")
+    // console.log("Looking for Meetups")
     $http.post(`${server}/meetups/search`, { zip: self.meetupSearch.zip, radius: self.meetupSearch.radius })
       .then(function(response) {
         // console.log(response);

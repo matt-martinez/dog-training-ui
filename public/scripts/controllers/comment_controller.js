@@ -2,7 +2,7 @@ function CommentController($scope, $http, $state, $stateParams) {
   var self    = this;
   var server  = 'http://localhost:3000';
   // var server  = 'https://pawsitive-reinforcement-api.herokuapp.com/';
-  console.log("Loading Comment Controller");
+  // console.log("Loading Comment Controller");
 
   // Refactor was needed to address scoping issue in post.html. Upon page refresh,
   // post.id was lost which caused post.html to break. Using $stateParams to
@@ -25,12 +25,10 @@ function CommentController($scope, $http, $state, $stateParams) {
 
   // Post Edit
   function editPost(post, currentUser, id) {
-    console.log("Post Edit");
-    console.log(post)
-    console.log(id)
+    // console.log("Post Edit");
     $http.put(`${server}/posts/${id}`, post)
       .then(function(response) {
-        console.log(response);
+        // console.log(response);
         getPostsAndComments();
       });
   }
@@ -58,14 +56,12 @@ function CommentController($scope, $http, $state, $stateParams) {
   }
 
   // Comment Edit
-  // self.updatedComment = {body: ''};
   function editComment(comment, currentUser, id) {
     // console.log("Comment Edit");
     $http.put(`${server}/comments/${id}`, comment)
       .then(function(response) {
         // console.log(response);
         getPostsAndComments();
-        // self.updatedComment = {body: ''};
       });
   }
 
