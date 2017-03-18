@@ -25,10 +25,12 @@ function CommentController($scope, $http, $state, $stateParams) {
 
   // Post Edit
   function editPost(post, currentUser, id) {
-    // console.log("Post Edit");
-    $http.put(`${server}/posts/${id}`, { post: {title: post.title, body: post.body }})
+    console.log("Post Edit");
+    console.log(post)
+    console.log(id)
+    $http.put(`${server}/posts/${id}`, post)
       .then(function(response) {
-        // console.log(response);
+        console.log(response);
         getPostsAndComments();
       });
   }
@@ -58,10 +60,10 @@ function CommentController($scope, $http, $state, $stateParams) {
   // Comment Edit
   // self.updatedComment = {body: ''};
   function editComment(comment, currentUser, id) {
-    console.log("Comment Edit");
+    // console.log("Comment Edit");
     $http.put(`${server}/comments/${id}`, comment)
       .then(function(response) {
-        console.log(response);
+        // console.log(response);
         getPostsAndComments();
         // self.updatedComment = {body: ''};
       });
