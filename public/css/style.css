@@ -12,6 +12,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #333333;
   background-color: #F2F2F3;
+  text-align: center;
 }
 
 .pure-menu-link {
@@ -22,8 +23,12 @@ body {
 }
 
 .bottomNav {
-  margin: auto;
-  width: 50%;
+  text-align: center;
+}
+
+.bottomNav > ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 .button-submit {
@@ -32,9 +37,28 @@ body {
 
 .click {
   cursor: pointer;
+  display: block;
+}
+
+.click:hover {
+  color: #0B99BC;
 }
 
 /* Homepage Partial */
+.homepage {
+  margin: auto;
+  width: 85%;
+}
+
+.homepage > div {
+  margin: 10px;
+  text-align: center;
+}
+
+.homePhoto {
+  border-radius: 20px;
+  border: 1px solid #0B99BC;
+}
 
 /* Signup Partial */
 
