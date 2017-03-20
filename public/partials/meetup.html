@@ -19,7 +19,7 @@
     <p>Members: {{meetup.members}}</p>
     <p>{{meetup.city}}, {{meetup.state}}</p>
     <p>Group Link: <a href="{{meetup.link}}">{{meetup.link}}</a></p>
-    <p>Description: {{meetup.description}}</p>
+    <p>Description: {{meetup.description | htmlToText }}</p>
     <p>Next Event: {{meetup.next_event.name}}</p>
     <p>Time: {{meetup.next_event.time | date: 'MM-dd-yyyy HH:mm a'}}</p>
   </div>
