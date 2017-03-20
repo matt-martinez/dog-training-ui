@@ -1,15 +1,18 @@
 <div class="individualComment">
   <div class="" ng-show="!editCommentForm">
     <p>{{comment.body}}</p>
-
-    <button ng-show="home.currentUser.id==comment.user_id" ng-click="editCommentForm=true">Edit Comment</button>
-    <button ng-show="home.currentUser.id==comment.user_id" ng-click="comments.deleteComment(home.currentUser, comment.id)">Delete Comment</button>
+    <div class="pure-button-group">
+      <button class="button-edit pure-button" ng-show="home.currentUser.id==comment.user_id" ng-click="editCommentForm=true">Edit Comment</button>
+      <button class=" button-delete pure-button" ng-show="home.currentUser.id==comment.user_id" ng-click="comments.deleteComment(home.currentUser, comment.id)">Delete Comment</button>
+    </div>
   </div>
-  
+
   <div class="" ng-show="editCommentForm">
     <form ng-submit="comments.editComment(comment, home.currentUser, comment.id)">
-      <textarea ng-model="comment.body"></textarea>
-      <button ng-click="editCommentForm=false">Submit</button>
+      <div class="">
+        <textarea class="commentText" ng-model="comment.body"></textarea>
+      </div>
+      <button class="button-submit pure-button" ng-click="editCommentForm=false">Submit</button>
     </form>
   </div>
 </div>

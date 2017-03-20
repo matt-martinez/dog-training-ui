@@ -106,7 +106,7 @@ input {
 
 textarea {
   text-align: center;
-  height: 400px;
+  height: 300px;
   width: 500px;
 }
 
@@ -129,7 +129,23 @@ textarea {
   color: #F2F2F3;
 }
 
+.return {
+  width: 125px;
+  margin: 0 auto 50px auto;
+}
+
 /* Comment View Partial */
+.individualComment {
+  border: 1px solid #333333;
+  background-color: #E6E6E6;
+  width: 80%;
+  margin: 0 auto 10px auto;
+  padding: 10px 0;
+}
+
+.commentText {
+  height: 150px;
+}
 
 /* Behavior Partial */
 

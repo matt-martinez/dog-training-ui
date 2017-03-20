@@ -31,16 +31,19 @@
 
 <br>
 
-<div class="">
+<div class="" ng-show="!createForm">
   <button class="button-submit pure-button" ng-show="home.currentUser" ng-click="createForm=true">Add Comment</button>
   <p ng-show="!home.currentUser">Please sign in to add a comment.</p>
-
-  <form ng-show="createForm" ng-submit="comments.createComment(home.currentUser, comments.singlePost.id)">
-    <textarea ng-model="comments.newComment.body"></textarea>
-    <button ng-click="createForm=false">Submit</button>
+</div>
+<div class="" ng-show="createForm">
+  <form ng-submit="comments.createComment(home.currentUser, comments.singlePost.id)">
+    <div class="">
+      <textarea class="commentText" ng-model="comments.newComment.body" required></textarea>
+    </div>
+    <button class="button-submit pure-button" ng-click="createForm=false">Submit</button>
   </form>
 </div>
 
 <br>
 
-<a ui-sref="forum">Return to Forum</a>
+<h4 class="return click" ui-sref="forum">Return to Forum</h4>
