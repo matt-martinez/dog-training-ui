@@ -2,10 +2,10 @@
 <p>To search for a meetup, enter your zipcode along with the miles you're willing to travel.</p>
 <form class="pure-form meetupSearch" ng-submit="meetups.findMeetups(zip, radius)">
   <div class="">
-    <input type="number" placeholder="Zipcode" ng-model="meetups.meetupSearch.zip">
+    <input type="number" placeholder="Zipcode" ng-model="meetups.meetupSearch.zip" required>
   </div>
   <div class="">
-    <input type="number" placeholder="Mile Radius" ng-model="meetups.meetupSearch.radius">
+    <input type="number" placeholder="Mile Radius" ng-model="meetups.meetupSearch.radius" required>
   </div>
   <button class="button-submit pure-button">Submit</button>
 </form>
