@@ -45,4 +45,8 @@ angular.module('DogTrainingApp', ['ui.router'])
       templateUrl: '/partials/meetup.html',
       controller: 'MeetupController as meetups'
     })
+    .state('user', {
+      url: '/user',
+      templateUrl: '/partials/user.html'
+    })
   }

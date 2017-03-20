@@ -1,7 +1,11 @@
-<h1>Write a New Post</h1>
+<h2>Write a New Post</h2>
 
-<form ng-submit="posts.createPost(home.currentUser)">
-  <input type="text" placeholder="Post Title" ng-model="posts.newPost.title">
-  <textarea ng-model="posts.newPost.body"></textarea>
-  <button>Submit</button>
+<form class="pure-form postForm" ng-submit="posts.createPost(home.currentUser)" required>
+  <div class="">
+    <input class="inputTitle" type="text" placeholder="Post Title" ng-model="posts.newPost.title" required>
+  </div>
+  <div class="">
+    <textarea placeholder="Post Text Here" ng-model="posts.newPost.body" required></textarea>
+  </div>
+  <button class="button-submit pure-button">Submit</button>
 </form>

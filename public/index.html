@@ -23,26 +23,35 @@
     <!-- Custom Directives -->
     <script type="text/javascript" src="scripts/directives/comment.js"></script>
     <!-- Styling -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
     <link rel="stylesheet" href="css/style.css">
 
   </head>
 
   <body ng-controller="HomeController as home">
-    <nav ng-controller="AuthController as auth">
-      <h1 ui-sref="homepage">Pawsitive Reinforcement</h1>
-      <ul>
-        <li ng-if="!home.currentUser" ui-sref="signup">Sign-Up!</li>
-        <li ng-if="home.currentUser" ng-click="auth.logout()">Logout</li>
-        <li ng-if="!home.currentUser"><form ng-submit="auth.login(userPass)">
-          <input type="text" placeholder="Email" ng-model="userPass.email">
-          <input type="password" placeholder="Password" ng-model="userPass.password">
-          <button>Login</button>
-        </form></li>
-        <li ui-sref="forum">Forum</li>
-        <li ui-sref="behavior">Dog Behaviors</li>
-        <li ui-sref="meetup">Meetups!</li>
-      </ul>
-
+    <nav class="pure-menu pure-menu-horizontal" ng-controller="AuthController as auth">
+      <div class="topNav">
+        <h1 class="pure-menu-heading pure-menu-link click" ui-sref="homepage"><img class="headerImg" src="images/paws.png" alt="Paw Prints"> Pawsitive Reinforcement</h1>
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item" ng-if="!home.currentUser">
+            <form class="pure-form" ng-submit="auth.login(userPass)">
+              <input type="text" placeholder="Email" ng-model="userPass.email">
+              <input type="password" placeholder="Password" ng-model="userPass.password">
+              <button class="button-submit pure-button">Login</button>
+            </form>
+          </li>
+          <li class="pure-menu-item pure-menu-link click" ng-if="home.currentUser" ui-sref="user">{{home.currentUser.username}}</li>
+          <li class="pure-menu-item pure-menu-link click" ng-if="home.currentUser" ng-click="auth.logout()">Logout</li>
+          <li class="pure-menu-item pure-menu-link click" ng-if="!home.currentUser" ui-sref="signup">Sign-Up!</li>
+        </ul>
+      </div>
+      <div class="bottomNav pure-menu">
+        <h4 class="pure-menu-item pure-menu-link click" ui-sref="behavior">Dog Behaviors</h4>
+        <h4 class="pure-menu-item pure-menu-link click" ui-sref="forum">Training Forum</h4>
+        <h4 class="pure-menu-item pure-menu-link click" ui-sref="meetup">Community Meetups</h4>
+      </div>
     </nav>
 
       <ui-view>

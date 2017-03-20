@@ -1,4 +1,175 @@
-.groupPhoto {
-  height: 20%;
-  width: 20%;
+/* Index */
+.pure-menu-heading {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2.5em;
+}
+
+.headerImg {
+  height: 50px;
+  width: 50px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
+  background-color: #F2F2F3;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
+.pure-menu-link {
+  color: #0B99BC;
+}
+
+.topNav {
+}
+
+.bottomNav {
+  text-align: center;
+}
+
+.button-submit {
+  background: #0B99BC;
+  color: #F2F2F3;
+}
+
+.click {
+  cursor: pointer;
+  display: block;
+}
+
+.click:hover {
+  color: #0B99BC;
+}
+
+/* Homepage Partial */
+.homepage {
+  margin: auto;
+  width: 85%;
+}
+
+.homepage > div {
+  margin: 10px;
+  text-align: center;
+}
+
+.homePhoto {
+  border-radius: 20px;
+  border: 1px solid #0B99BC;
+}
+
+/* Signup Partial */
+.signUp > div {
+  padding-bottom: 10px;
+}
+
+/* User Partial */
+
+
+/* Forum Partial */
+.forum {
+  width: 60%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.forumPosts {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30px 0;
+  padding: 10px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  background-color: #E6E6E6;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.forumPosts:hover {
+  box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Create Post Partial */
+.postForm > div {
+  padding-bottom: 10px;
+}
+
+.inputTitle {
+  width: 400px;
+}
+
+textarea {
+  text-align: center;
+  height: 300px;
+  width: 500px;
+}
+
+/* Post Partial */
+.postArea {
+  border: 1px solid #333333;
+  background-color: #E6E6E6;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.button-edit {
+  background-color: #2F8F75;
+  color: #F2F2F3;
+}
+
+.button-delete {
+  background-color: #EE4B3E;
+  color: #F2F2F3;
+}
+
+.return {
+  width: 125px;
+  margin: 0 auto 50px auto;
+}
+
+/* Comment View Partial */
+.individualComment {
+  border: 1px solid #333333;
+  background-color: #E6E6E6;
+  width: 80%;
+  margin: 0 auto 10px auto;
+  padding: 10px 0;
+}
+
+.commentText {
+  height: 150px;
+}
+
+/* Behavior Partial */
+.searchBehavior > div {
+  margin-bottom: 10px;
+}
+
+.searchResults {
+  border: 1px solid #333333;
+  background-color: #E6E6E6;
+  width: 90%;
+  margin: 10px auto 10px auto;
+  padding: 10px 0;
+}
+
+/* Meetups Partial*/
+.meetupSearch > div {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.meetupInfo {
+  border: 1px solid #333333;
+  background-color: #E6E6E6;
+  width: 97%;
+  margin: 10px auto 10px auto;
+  padding: 10px;
 }

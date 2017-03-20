@@ -1,27 +1,31 @@
 <h1>How Can We Help?</h1>
 
-<div class="searchBehavior">
-  <form autocomplete="on">
-    <label for="dogBehaviors">Describe Your Dog's Behavior</label>
-    <input id="dogBehaviors" type="text" placeholder="i.e. Barking, Chewing, House-Training" ng-model="searchBar">
-    <button>Submit</button>
+<div class="">
+  <form class="pure-form searchBehavior">
+    <div class="">
+      <label for="dogBehaviors">Describe Your Dog's Behavior</label>
+    </div>
+    <div class="">
+      <input class="inputTitle" id="dogBehaviors" type="text" placeholder="i.e. Barking, Chewing, House-Training" ng-model="searchBar">
+    </div>
+    <!-- <button class="button-submit pure-button">Submit</button> -->
   </form>
 </div>
 
-<div ng-show="searchBar" ng-repeat="behavior in behaviors.allBehaviors | filter: searchBar">
-  <h3>{{behavior.name}}</h3>
+<div class="searchResults" ng-show="searchBar" ng-repeat="behavior in behaviors.allBehaviors | filter: searchBar">
+  <h2>{{behavior.name}}</h2>
 
   <div class="suggestions">
-    <h4>Here are some suggestions:</h4>
-    <p>{{behavior.suggestion_one}}</p>
-    <p>{{behavior.suggestion_two}}</p>
-    <p>{{behavior.suggestion_three}}</p>
-    <p>{{behavior.suggestion_four}}</p>
-    <p>{{behavior.suggestion_five}}</p>
+    <h3>Here are some suggestions:</h3>
+    <p>1) {{behavior.suggestion_one}}</p>
+    <p>2) {{behavior.suggestion_two}}</p>
+    <p>3) {{behavior.suggestion_three}}</p>
+    <p>4) {{behavior.suggestion_four}}</p>
+    <p>5) {{behavior.suggestion_five}}</p>
   </div>
 
   <div class="resources">
-    <h4>Here are some more resources:</h4>
+    <h3>Here are some more resources:</h3>
     <p><a href="{{behavior.resource_one}}">{{behavior.resource_one}}</a></p>
     <p><a href="{{behavior.resource_two}}">{{behavior.resource_two}}</a></p>
     <p><a href="{{behavior.resource_three}}">{{behavior.resource_three}}</a></p>
