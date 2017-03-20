@@ -1,16 +1,21 @@
-<div class="">
+<div class="postArea">
   <div class="" ng-show="!editForm">
     <h1>{{comments.singlePost.title}}</h1>
-    <h4>{{comments.singlePost.created_at | date: 'MM-dd-yyyy HH:mm' }}</h4>
+    <h5>{{comments.singlePost.created_at | date: 'MM-dd-yyyy HH:mm' }}</h5>
     <p>{{comments.singlePost.body}}</p>
-
-    <button ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="editForm=true">Edit Post</button><button ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="comments.deletePost(home.currentUser, comments.singlePost.id)">Delete Post</button>
+    <div class="pure-button-group">
+      <button class="button-edit pure-button" ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="editForm=true">Edit Post</button><button class=" button-delete pure-button" ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="comments.deletePost(home.currentUser, comments.singlePost.id)">Delete Post</button>
+    </div>
   </div>
-  <div class="" ng-show="editForm">  
-    <form ng-submit="comments.editPost(comments.singlePost, home.currentUser, comments.singlePost.id)">
-      <input type="text" ng-model="comments.singlePost.title">
-      <textarea ng-model="comments.singlePost.body"></textarea>
-      <button ng-click="editForm=false">Submit</button>
+  <div class="" ng-show="editForm">
+    <form class="pure-form postForm" ng-submit="comments.editPost(comments.singlePost, home.currentUser, comments.singlePost.id)">
+      <div class="">
+        <input class="inputTitle" type="text" ng-model="comments.singlePost.title">
+      </div>
+      <div class="">
+        <textarea ng-model="comments.singlePost.body"></textarea>
+      </div>
+      <button class="button-submit pure-button" ng-click="editForm=false">Submit</button>
     </form>
   </div>
 </div>
@@ -27,7 +32,7 @@
 <br>
 
 <div class="">
-  <button ng-show="home.currentUser" ng-click="createForm=true">Add Comment</button>
+  <button class="button-submit pure-button" ng-show="home.currentUser" ng-click="createForm=true">Add Comment</button>
   <p ng-show="!home.currentUser">Please sign in to add a comment.</p>
 
   <form ng-show="createForm" ng-submit="comments.createComment(home.currentUser, comments.singlePost.id)">

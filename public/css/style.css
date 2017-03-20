@@ -32,7 +32,8 @@ input {
 }
 
 .button-submit {
-  /*border-radius: 20px;*/
+  background: #0B99BC;
+  color: #F2F2F3;
 }
 
 .click {
@@ -95,7 +96,7 @@ input {
 }
 
 /* Create Post Partial */
-.createPostForm > div {
+.postForm > div {
   padding-bottom: 10px;
 }
 
@@ -110,6 +111,23 @@ textarea {
 }
 
 /* Post Partial */
+.postArea {
+  border: 1px solid #333333;
+  background-color: #E6E6E6;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.button-edit {
+  background-color: #2F8F75;
+  color: #F2F2F3;
+}
+
+.button-delete {
+  background-color: #EE4B3E;
+  color: #F2F2F3;
+}
 
 /* Comment View Partial */
 
