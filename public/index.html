@@ -37,8 +37,8 @@
         <ul class="pure-menu-list">
           <li class="pure-menu-item" ng-if="!home.currentUser">
             <form class="pure-form" ng-submit="auth.login(userPass)">
-              <input class="pure-input-rounded" type="text" placeholder="Email" ng-model="userPass.email">
-              <input class="pure-input-rounded" type="password" placeholder="Password" ng-model="userPass.password">
+              <input type="text" placeholder="Email" ng-model="userPass.email">
+              <input type="password" placeholder="Password" ng-model="userPass.password">
               <button class="button-submit pure-button">Login</button>
             </form>
           </li>
