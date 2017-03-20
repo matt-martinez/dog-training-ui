@@ -94,6 +94,19 @@ input {
 }
 
 /* Create Post Partial */
+.createPostForm > div {
+  padding-bottom: 10px;
+}
+
+.inputTitle {
+  width: 400px;
+}
+
+textarea {
+  text-align: center;
+  height: 400px;
+  width: 500px;
+}
 
 /* Post Partial */
 
