@@ -26,11 +26,6 @@ body {
   text-align: center;
 }
 
-.bottomNav > ul {
-  padding: 0;
-  list-style-type: none;
-}
-
 .button-submit {
   border-radius: 20px;
 }
