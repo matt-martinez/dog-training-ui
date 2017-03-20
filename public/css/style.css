@@ -119,14 +119,26 @@ textarea {
   padding: 10px 0;
 }
 
-.button-edit {
-  background-color: #2F8F75;
-  color: #F2F2F3;
+.editPostIcon {
+  display: block;
+  cursor: pointer;
+  width: 80px;
+  margin: auto;
 }
 
-.button-delete {
-  background-color: #EE4B3E;
-  color: #F2F2F3;
+.editPostIcon:hover {
+  color: #0B99BC;
+}
+
+.deletePostIcon {
+  display: block;
+  cursor: pointer;
+  width: 90px;
+  margin: auto;
+}
+
+.deletePostIcon:hover {
+  color: #EE4B3E;
 }
 
 .return {
@@ -145,6 +157,28 @@ textarea {
 
 .commentText {
   height: 150px;
+}
+
+.editCommentIcon {
+  display: block;
+  cursor: pointer;
+  width: 110px;
+  margin: auto;
+}
+
+.editCommentIcon:hover {
+  color: #0B99BC;
+}
+
+.deleteCommentIcon {
+  display: block;
+  cursor: pointer;
+  width: 125px;
+  margin: auto;
+}
+
+.deleteCommentIcon:hover {
+  color: #EE4B3E;
 }
 
 /* Behavior Partial */
@@ -172,4 +206,8 @@ textarea {
   width: 97%;
   margin: 10px auto 10px auto;
   padding: 10px;
+}
+
+.meetupInfoLeft, .meetupInfoRight {
+  padding: 0 10px;
 }

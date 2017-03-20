@@ -3,8 +3,8 @@
     <h1>{{comments.singlePost.title}}</h1>
     <h5>{{comments.singlePost.created_at | date: 'MM-dd-yyyy HH:mm' }}</h5>
     <p>{{comments.singlePost.body}}</p>
-    <div class="pure-button-group">
-      <button class="button-edit pure-button" ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="editForm=true">Edit Post</button><button class=" button-delete pure-button" ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="comments.deletePost(home.currentUser, comments.singlePost.id)">Delete Post</button>
+    <div class="">
+      <i class="fa fa-edit editPostIcon" ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="editForm=true"> Edit Post</i><i class="fa fa-remove deletePostIcon" ng-show="home.currentUser.id==comments.singlePost.user_id" ng-click="comments.deletePost(home.currentUser, comments.singlePost.id)"> Delete Post</i>
     </div>
   </div>
   <div class="" ng-show="editForm">

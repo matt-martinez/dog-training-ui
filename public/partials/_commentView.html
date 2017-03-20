@@ -1,9 +1,9 @@
 <div class="individualComment">
   <div class="" ng-show="!editCommentForm">
     <p>{{comment.body}}</p>
-    <div class="pure-button-group">
-      <button class="button-edit pure-button" ng-show="home.currentUser.id==comment.user_id" ng-click="editCommentForm=true">Edit Comment</button>
-      <button class=" button-delete pure-button" ng-show="home.currentUser.id==comment.user_id" ng-click="comments.deleteComment(home.currentUser, comment.id)">Delete Comment</button>
+    <div class="">
+      <i class="fa fa-edit editCommentIcon" ng-show="home.currentUser.id==comment.user_id" ng-click="editCommentForm=true">Edit Comment</i>
+      <i class="fa fa-remove deleteCommentIcon" ng-show="home.currentUser.id==comment.user_id" ng-click="comments.deleteComment(home.currentUser, comment.id)">Delete Comment</i>
     </div>
   </div>
 

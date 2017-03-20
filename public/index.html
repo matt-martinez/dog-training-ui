@@ -26,6 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 
   </head>
@@ -37,8 +38,8 @@
         <ul class="pure-menu-list">
           <li class="pure-menu-item" ng-if="!home.currentUser">
             <form class="pure-form" ng-submit="auth.login(userPass)">
-              <input type="text" placeholder="Email" ng-model="userPass.email">
-              <input type="password" placeholder="Password" ng-model="userPass.password">
+              <input type="text" placeholder="Email" ng-model="userPass.email" required>
+              <input type="password" placeholder="Password" ng-model="userPass.password" required>
               <button class="button-submit pure-button">Login</button>
             </form>
           </li>
