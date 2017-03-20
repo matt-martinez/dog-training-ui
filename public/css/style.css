@@ -148,6 +148,17 @@ textarea {
 }
 
 /* Behavior Partial */
+div > label {
+  margin-bottom: 10px;
+}
+
+.searchResults {
+  border: 1px solid #333333;
+  background-color: #E6E6E6;
+  width: 90%;
+  margin: 10px auto 10px auto;
+  padding: 10px 0;
+}
 
 /* Meetups Partial*/
 .groupPhoto {
