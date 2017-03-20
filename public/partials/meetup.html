@@ -1,17 +1,21 @@
-<h2>Meetups!</h2>
-
-<form ng-submit="meetups.findMeetups(zip, radius)">
-  <input type="number" placeholder="Zipcode" ng-model="meetups.meetupSearch.zip">
-  <input type="number" placeholder="Mile Radius" ng-model="meetups.meetupSearch.radius">
-  <button>Submit</button>
+<h1>Meetups!</h1>
+<p>To search for a meetup, enter your zipcode along with the miles you're willing to travel.</p>
+<form class="pure-form meetupSearch" ng-submit="meetups.findMeetups(zip, radius)">
+  <div class="">
+    <input type="number" placeholder="Zipcode" ng-model="meetups.meetupSearch.zip">
+  </div>
+  <div class="">
+    <input type="number" placeholder="Mile Radius" ng-model="meetups.meetupSearch.radius">
+  </div>
+  <button class="button-submit pure-button">Submit</button>
 </form>
 
-<div class="meetupInfo" ng-repeat="meetup in meetups.meetupResults">
-  <div class="meetupInfoLeft">
-    <h3>{{meetup.name}}</h3>
-    <img class="groupPhoto" ng-src="{{meetup.group_photo.photo_link}}" alt="Group Photo">
+<div class="meetupInfo pure-g" ng-repeat="meetup in meetups.meetupResults">
+  <div class="meetupInfoLeft pure-u-1 pure-u-md-11-24">
+    <h2>{{meetup.name}}</h2>
+    <img class="pure-img" ng-src="{{meetup.group_photo.photo_link}}" alt="Group Photo">
   </div>
-  <div class="meetupInfoRight">
+  <div class="meetupInfoRight pure-u-1 pure-u-md-11-24">
     <p>Members: {{meetup.members}}</p>
     <p>{{meetup.city}}, {{meetup.state}}</p>
     <p>Group Link: <a href="{{meetup.link}}">{{meetup.link}}</a></p>
