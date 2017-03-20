@@ -173,3 +173,7 @@ textarea {
   margin: 10px auto 10px auto;
   padding: 10px;
 }
+
+.meetupInfoLeft, .meetupInfoRight {
+  padding: 0 10px;
+}
