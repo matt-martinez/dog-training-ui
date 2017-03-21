@@ -133,17 +133,46 @@ Meetups:
 - t.integer "radius"
 
 ## Technical Specs
-### Technologies used
+### Technologies Used
+HTML5
+CSS3
+Javascript
+Angular.js
+Express.js
+Ruby
+Rails
+PostgreSQL
+Pure.CSS
 
 ### Required Gems
+HTTParty
+bCrypt
+JWT
+Pry-Rails
+Rack-CORS
 
 ### API
 Meetup.com: https://www.meetup.com/meetup_api/
 
 ## MVP Goals
+- User Model: Sign Up, Login, Logout w/ Authentication
+- Behavior Model: Index w/ seeded database
+- Post Model: Full CRUD
+- Comment Model: Full CRUD
+- CSS framework
 
 ## Reach Goals
+- Meetup Group API
+- Mobile Responsive Site
+- Display forum posts in relative time
+- Allow users to save behaviors and Meetups to user page
 
-## Project Challenges and Unresolved Issues
+## Project Challenges
+The biggest challenge I faced with this project was incorporating both the posts and comments routes on the same view page. Since I was working with two full CRUD models, I needed to be sure that there was enough functionality to support these models' capabalities. What made this setup even more complicated was the necessity for posts to be routed by post_id.
+
+The first step I took to solve this issue was persist the post id through $stateParams. Without this, anytime a user refreshed the page the post_id would be lost resulting in a broken view. Additionally, I needed to move the get, edit and delete routes for posts into the comments controller to fix further scoping issues. As a result, my comments controller holds a bulk of the front-end CRUD routes.
+
+This setup actually proved advantageous as I was then able to refactor many routes to improve efficiency and promote DRY best practices. A key example was the get requests for both the posts and comments. I was able to grab them both simultaneously in the back-end, thanks to the SQL database, and send the response to a single function in the front-end. The biggest lesson from this challenge is always plan out as best you can. Going back, I would have liked to better plan the relationship between posts and comments and save the time that I spent refactoring.
 
 ## Conclusion
+This project started out as a very small idea to share suggestions and resources for solving dog behavior, and rapidly turned into a much larger application. Before I knew it I had gone from 3 models to 5, two of which were full CRUD which I had not attempted before. I am happy to have undertaken this challenge and I am proud with all of the knowledge I was able to pull together to make this project happen. In the end, this project also contains a custom Angular directive and filter, as well as an API that brought a new level of functionality. Moving forward, I would like to achieve my remaining reach goals which include allowing the user to save behaviors and Meetups directly to their user page.
